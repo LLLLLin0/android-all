@@ -27,6 +27,12 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".view.recyclerview.TestActivity">
+            <intent-filter>
+                <action android:name="bytedance.view.recycler.dragtest"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
