@@ -21,6 +21,17 @@ android {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/',
+                            'src/main/res/layouts/view/',
+                            'src/main/res/layouts/requirement/',
+                            'src/main/res'
+                    ]
+        }
+    }
 }
 
 dependencies {
@@ -34,4 +45,5 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.android.support:design:28.0.0'
 }

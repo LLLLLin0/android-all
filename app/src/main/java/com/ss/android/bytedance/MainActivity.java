@@ -3,13 +3,16 @@ package com.ss.android.bytedance;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.EditText;
 
-import com.ss.android.bytedance.requirement.download.DownloadActivity;
-
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
+
+    @BindView(R2.id.edit)
+    EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ButterKnife.bind(this);
-//        findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
     }
 
     @OnClick(R2.id.button1)
-    void enterDownload() {
-        Intent intent = new Intent(MainActivity.this, DownloadActivity.class);
+    void enterAction() {
+        Intent intent = new Intent();
+        intent.setAction(mEditText.getText().toString());
         MainActivity.this.startActivity(intent);
     }
 }
